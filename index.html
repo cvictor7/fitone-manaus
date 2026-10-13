@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fit One Manaus | Academia na Vila da Prata</title>
+<meta name="description" content="Fit One Custom Training: treino personalizado em Manaus desde 2016. Musculação, Cross, Funcional, Hyrox, Spinning e Funcional Kids na Vila da Prata.">
+<link rel="canonical" href="https://fitonemanaus.com.br/">
+<meta name="theme-color" content="#000000">
+
+<!-- Prévia de link (WhatsApp, Instagram, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Fit One Manaus">
+<meta property="og:title" content="Fit One Manaus: treino personalizado desde 2016">
+<meta property="og:description" content="Musculação, Cross, Funcional, Hyrox, Spinning e Funcional Kids. Rua Paraguaçu, 206, Vila da Prata.">
+<meta property="og:url" content="https://fitonemanaus.com.br/">
+<meta property="og:image" content="https://fitonemanaus.com.br/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fit One Manaus, academia na Vila da Prata">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/emblema.png">
+
+<!-- Dados estruturados (Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "Fit One Custom Training",
+  "alternateName": "Fit One Manaus",
+  "url": "https://fitonemanaus.com.br/",
+  "image": "https://fitonemanaus.com.br/assets/og.jpg",
+  "logo": "https://fitonemanaus.com.br/assets/emblema.png",
+  "telephone": "+55-92-98416-3597",
+  "foundingDate": "2016",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Paraguaçu, 206 - Vila da Prata",
+    "addressLocality": "Manaus",
+    "addressRegion": "AM",
+    "postalCode": "69030-540",
+    "addressCountry": "BR"
+  },
+  "sameAs": ["https://www.instagram.com/fit1_manaus/"],
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:00", "closes": "22:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:00", "closes": "14:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:00", "closes": "11:00"}
+  ]
+}
+</script>
+
+<link rel="preload" href="assets/fonts/big-shoulders-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/archivo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Conceito: o mármore preto do emblema e o "1" da marca, em tamanho de parede.
+   Preto e branco como base, verde #70E000 (cor oficial do PDF da marca) só no "1" e nos botões. */
+@font-face{font-family:"Big Shoulders Display";font-weight:800;font-style:normal;font-display:swap;src:url(assets/fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Big Shoulders Display";font-weight:900;font-style:normal;font-display:swap;src:url(assets/fonts/big-shoulders-display-latin-900-normal.woff2) format("woff2")}
+@font-face{font-family:"Archivo";font-weight:400;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Archivo";font-weight:600;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Archivo";font-weight:700;font-style:normal;font-display:swap;src:url(assets/fonts/archivo-latin-700-normal.woff2) format("woff2")}
+
+:root{
+  --lime:#70E000;
+  --lime-hover:#82F212;
+  --black:#000;
+  --ink:#0A0A0A;
+  --paper:#fff;
+  --gray:#A9AEA9;
+  --gray-ink:#555A55;
+  --line-dark:rgba(255,255,255,.16);
+  --line-light:#D4D7D2;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.96;margin:0;letter-spacing:.005em;text-wrap:balance}
+h2{font-size:clamp(2.8rem,6vw,4.6rem)}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+.sec{padding-block:clamp(64px,9vw,112px)}
+.dark{background:var(--ink);color:var(--paper)}
+.light{background:var(--paper);color:var(--black)}
+.dark .muted{color:var(--gray)}
+.light .muted{color:var(--gray-ink)}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.light :focus-visible{outline-color:var(--black)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:4px;font:700 1rem/1 var(--body);text-decoration:none;border:0;cursor:pointer;background:var(--lime);color:var(--black)}
+.btn:hover{background:var(--lime-hover)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn-ghost:hover{background:var(--paper);color:var(--black);box-shadow:inset 0 0 0 2px var(--paper)}
+.light .btn-ghost:hover{background:var(--black);color:var(--paper);box-shadow:inset 0 0 0 2px var(--black)}
+
+/* topo */
+header{background:var(--black);position:sticky;top:0;z-index:30;border-bottom:1px solid #1c1c1c}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.logo img{height:38px;width:auto}
+nav{display:flex;gap:28px;font-weight:600;font-size:.95rem}
+nav a{text-decoration:none;color:#C4C8C4}
+nav a:hover{color:var(--paper)}
+header .btn{padding:11px 16px;font-size:.92rem}
+@media (max-width:860px){nav{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.6) 42%,rgba(0,0,0,0) 80%,rgba(0,0,0,.25) 100%),
+  url(assets/marmore.webp) center/cover no-repeat #000;min-height:min(88vh,780px)}
+.hero-in{position:relative;z-index:2;min-height:inherit;display:flex;align-items:center;padding-block:56px}
+.hero h1{font-size:clamp(3.9rem,9.6vw,8.4rem);line-height:.97;max-width:9ch}
+.hero .lead{margin-top:26px;font-size:1.15rem;max-width:30rem;color:#DADDD9}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.status{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:.95rem;font-weight:600;color:#DADDD9}
+.status i{width:10px;height:10px;border-radius:50%;background:#6a6e6a;flex:none}
+.status.open i{background:var(--lime)}
+.um{position:absolute;z-index:1;right:2vw;bottom:-16%;height:min(108%,78vw);width:auto;pointer-events:none;animation:rise 1s cubic-bezier(.2,.7,.2,1) .15s both}
+@keyframes rise{from{transform:translateY(8%);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:860px){
+  .hero{min-height:0;display:flex;flex-direction:column;background:linear-gradient(180deg,rgba(0,0,0,.78),rgba(0,0,0,.4)),url(assets/marmore.webp) center/cover no-repeat #000}
+  .hero-in{padding-block:44px 0;min-height:0}
+  .um{position:relative;right:auto;bottom:auto;height:340px;margin:30px 7vw -140px auto}
+}
+
+/* titulos de secao */
+.head{margin-bottom:44px;display:grid;gap:16px}
+.head p{max-width:34rem}
+
+/* modalidades */
+.mods{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line-dark)}
+.mods li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:baseline;padding:24px 0;border-top:1px solid var(--line-dark)}
+.mods h3{font-size:clamp(2.3rem,5.2vw,4rem);transition:color .15s}
+.mods li:hover h3{color:var(--lime)}
+.mods p{color:var(--gray);max-width:30rem}
+@media (max-width:760px){.mods li{grid-template-columns:1fr;gap:8px;padding:20px 0}}
+
+/* como funciona */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;counter-reset:s}
+.steps li{counter-increment:s;border-top:6px solid var(--lime);padding-top:18px}
+.steps li::before{content:counter(s);display:block;font-family:var(--display);font-weight:900;font-size:5.4rem;line-height:.9}
+.steps b{display:block;margin-top:14px;font-size:1.2rem}
+.steps p{margin-top:6px;color:var(--gray-ink)}
+@media (max-width:760px){.steps{grid-template-columns:1fr;gap:28px}.steps li::before{font-size:4rem}}
+
+/* fotos */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px}
+.ph{position:relative;overflow:hidden;background:#161616;display:flex;align-items:flex-end;padding:14px}
+.ph:first-child{grid-row:span 2}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph span{position:relative;font-size:.85rem;color:var(--gray)}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 150px 150px}.ph:first-child{grid-column:span 2;grid-row:auto}}
+
+/* horarios e endereco */
+.info .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px}
+.hours{width:calc(100% + 28px);margin:26px -14px 0;border-collapse:collapse}
+.hours td{padding:13px 14px;border-bottom:1px solid var(--line-dark)}
+.hours td:first-child{font-weight:600;font-size:1.05rem}
+.hours td:last-child{text-align:right;font-family:var(--display);font-weight:800;font-size:2rem;line-height:1;font-variant-numeric:tabular-nums}
+.hours tr.today td{background:var(--lime);color:var(--black);border-color:var(--lime)}
+.hours .tag{font-size:.82rem;font-weight:700;margin-left:10px}
+.nota{margin-top:16px;font-size:.92rem}
+.place address{font-style:normal;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2.4rem,4.6vw,3.3rem);line-height:.95;margin-top:26px}
+.place .bairro{margin-top:14px}
+.phone{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:26px}
+.phone strong{font-size:1.3rem;font-variant-numeric:tabular-nums}
+.phone button{font:600 .88rem var(--body);padding:8px 12px;border-radius:4px;border:1.5px solid var(--paper);background:transparent;color:var(--paper);cursor:pointer}
+.phone button:hover{background:var(--paper);color:var(--black)}
+.place .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.estrutura{list-style:none;margin:36px 0 0;padding:24px 0 0;border-top:1px solid var(--line-dark);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}
+.estrutura li{display:flex;gap:12px;align-items:center;font-weight:600}
+.estrutura li::before{content:"";width:8px;height:8px;background:var(--lime);flex:none}
+@media (max-width:860px){.info .wrap{grid-template-columns:1fr;gap:56px}}
+@media (max-width:420px){.estrutura{grid-template-columns:1fr}}
+
+/* whatsapp */
+.chat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.chat .sub{margin-top:16px;max-width:28rem}
+.assuntos{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line-light)}
+.assuntos button{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:14px;padding:15px 4px;border-bottom:1px solid var(--line-light);cursor:pointer;font-weight:600}
+.assuntos button::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid var(--black);flex:none}
+.assuntos button[aria-pressed="true"]{font-weight:700}
+.assuntos button[aria-pressed="true"]::before{border-width:6px}
+.assuntos button:focus-visible{outline:3px solid var(--black);outline-offset:-3px}
+.zap{background:#0B141A;color:#E9EDEF;border-radius:14px;padding:18px 18px 20px}
+.zap .who{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid #22313A}
+.zap .who img{width:40px;height:40px;border-radius:50%}
+.zap .who b{display:block;font-size:1rem;line-height:1.2}
+.zap .who span{font-size:.82rem;color:#8696A0}
+.bubble{position:relative;margin-left:auto;max-width:92%;background:#005C4B;border-radius:10px 0 10px 10px;padding:10px 12px 8px;font-size:1rem}
+.bubble::after{content:"";position:absolute;right:-8px;top:0;border-left:9px solid #005C4B;border-bottom:10px solid transparent}
+.bubble small{display:block;text-align:right;color:#9FC9BF;font-size:.72rem;margin-top:4px}
+.zap .btn{width:100%;justify-content:center;margin-top:22px}
+@media (max-width:860px){.chat{grid-template-columns:1fr;gap:36px}}
+
+/* duvidas */
+.faq{max-width:860px;border-top:2px solid var(--black)}
+details{border-bottom:1px solid var(--line-light)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;font-weight:700;font-size:1.12rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:14px;height:14px;flex:none;background:linear-gradient(var(--black),var(--black)) center/100% 2px no-repeat,linear-gradient(var(--black),var(--black)) center/2px 100% no-repeat}
+details[open] summary::after{background:linear-gradient(var(--black),var(--black)) center/100% 2px no-repeat}
+details p{padding:0 0 22px;max-width:44rem;color:var(--gray-ink)}
+
+/* fechamento */
+.final{background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.3)),url(assets/marmore.webp) center/cover no-repeat #000}
+.final .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(32px,7vw,96px);align-items:center}
+.final img{width:clamp(130px,19vw,230px);height:auto}
+.final h2{font-size:clamp(2.9rem,6.2vw,5rem);max-width:12ch}
+.final p{margin-top:18px;max-width:28rem;color:#DADDD9}
+.final .btn{margin-top:28px}
+@media (max-width:640px){.final .wrap{grid-template-columns:1fr}}
+footer{background:var(--black);color:#8E938E;font-size:.9rem;border-top:1px solid #1c1c1c}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:24px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--paper)}
+
+/* botao flutuante */
+.float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 3px var(--black),0 8px 24px rgba(0,0,0,.5)}
+.float svg{width:30px;height:30px;color:var(--black)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.um{animation:none}.mods h3{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#topo"><img src="assets/logo-h.svg" width="93" height="38" alt="Fit One Manaus"></a>
+    <nav aria-label="Seções">
+      <a href="#treinos">Treinos</a>
+      <a href="#horarios">Horários e endereço</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn wa-link" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.4Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <h1>Aqui o treino é feito pra você.</h1>
+        <p class="lead">Academia na Vila da Prata desde 2016. Você faz a avaliação física, o professor monta o treino em cima do seu objetivo e acompanha de perto enquanto você evolui.</p>
+        <div class="cta">
+          <a class="btn wa-link" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.4Z"/></svg>
+            Quero conhecer a academia
+          </a>
+          <a class="btn btn-ghost" href="#horarios">Ver horários</a>
+        </div>
+        <p class="status" id="status"><i></i><span id="status-text">Rua Paraguaçu, 206, Vila da Prata</span></p>
+      </div>
+    </div>
+    <img class="um" src="assets/um.svg" width="260" height="500" alt="" aria-hidden="true">
+  </section>
+
+  <section class="sec dark" id="treinos">
+    <div class="wrap">
+      <div class="head">
+        <h2>Seis jeitos de treinar</h2>
+        <p class="muted">Musculação com ficha individual e aulas em grupo pra quem gosta de treinar com a turma. Tem até aula pras crianças.</p>
+      </div>
+      <ul class="mods">
+        <li><h3>Musculação</h3><p>Ganho de massa, definição ou força, com a ficha montada e revisada pelo professor.</p></li>
+        <li><h3>Cross</h3><p>Aula em grupo de alta intensidade. Força e fôlego no mesmo treino.</p></li>
+        <li><h3>Funcional</h3><p>Movimentos do dia a dia, condicionamento e mobilidade em aula coletiva.</p></li>
+        <li><h3>Hyrox</h3><p>Corrida combinada com estações funcionais, no formato da prova. Pra quem quer competir ou só se testar.</p></li>
+        <li><h3>Spinning</h3><p>Bike com música e intensidade guiada pelo professor. Gasta muito em pouco tempo.</p></li>
+        <li><h3>Funcional Kids</h3><p>Brincadeira, coordenação e movimento pra criança gastar energia do jeito certo.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec light" id="como">
+    <div class="wrap">
+      <div class="head">
+        <h2>Cada aluno, um treino</h2>
+        <p class="muted">Ninguém recebe ficha pronta. O treino parte do que você precisa: emagrecer, ganhar massa, voltar depois de um tempo parado ou se preparar pra uma prova.</p>
+      </div>
+      <ol class="steps">
+        <li><b>Avaliação física</b><p>Medidas e composição corporal pra saber de onde você parte.</p></li>
+        <li><b>Treino montado pra você</b><p>Feito em cima do seu objetivo, da sua rotina e das suas limitações.</p></li>
+        <li><b>Professor do lado</b><p>Corrige a execução e ajusta o treino conforme você evolui.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="dark" id="fotos" style="padding-top:8px">
+    <div class="wrap">
+      <div class="gallery" id="gallery">
+        <div class="ph"><span>Salão de musculação</span></div>
+        <div class="ph"><span>Aula de Cross</span></div>
+        <div class="ph"><span>Pesos livres</span></div>
+        <div class="ph"><span>Fachada</span></div>
+        <div class="ph"><span>Alunos treinando</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark info" id="horarios">
+    <div class="wrap">
+      <div>
+        <h2>Horários</h2>
+        <table class="hours">
+          <tbody id="hours">
+            <tr data-d="1"><td>Segunda</td><td>5h às 22h</td></tr>
+            <tr data-d="2"><td>Terça</td><td>5h às 22h</td></tr>
+            <tr data-d="3"><td>Quarta</td><td>5h às 22h</td></tr>
+            <tr data-d="4"><td>Quinta</td><td>5h às 22h</td></tr>
+            <tr data-d="5"><td>Sexta</td><td>5h às 22h</td></tr>
+            <tr data-d="6"><td>Sábado</td><td>6h às 14h</td></tr>
+            <tr data-d="0"><td>Domingo</td><td>7h às 11h</td></tr>
+          </tbody>
+        </table>
+        <p class="nota muted">Em feriado o horário pode mudar. Confirme no WhatsApp.</p>
+      </div>
+
+      <div class="place">
+        <h2>Onde fica</h2>
+        <address>Rua Paraguaçu, 206</address>
+        <p class="bairro muted">Vila da Prata, Manaus, AM. CEP 69030-540. Tem estacionamento no local.</p>
+        <div class="phone">
+          <strong id="phone">(92) 98416-3597</strong>
+          <button type="button" id="copy-phone">Copiar número</button>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=FIT%20ONE%20Custom%20Training%2C%20Rua%20Paragua%C3%A7u%20206%2C%20Vila%20da%20Prata%2C%20Manaus" target="_blank" rel="noopener">Abrir no Maps</a>
+          <a class="btn btn-ghost" id="ig-link" href="#" target="_blank" rel="noopener">Ver o Instagram</a>
+        </div>
+        <ul class="estrutura" aria-label="Estrutura da academia">
+          <li>Ar-condicionado</li>
+          <li>Vestiário com chuveiro</li>
+          <li>Armários</li>
+          <li>Estacionamento</li>
+          <li>Café na academia</li>
+          <li>Avaliação física</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec light" style="padding-bottom:clamp(40px,6vw,72px)">
+    <div class="wrap chat">
+      <div>
+        <h2>Manda sua dúvida no WhatsApp</h2>
+        <p class="sub muted">Escolha o assunto e a mensagem já abre pronta no WhatsApp da academia. Valores e planos a equipe passa por lá.</p>
+        <ul class="assuntos" id="opts" aria-label="Assunto da mensagem">
+          <li><button type="button" data-msg="quero conhecer a academia e saber como funciona.">Quero conhecer a academia</button></li>
+          <li><button type="button" data-msg="queria saber os valores dos planos.">Valores dos planos</button></li>
+          <li><button type="button" data-msg="tenho Wellhub (Gympass). Consigo treinar aí?">Tenho Wellhub</button></li>
+          <li><button type="button" data-msg="queria saber os horários das aulas de Cross, Funcional, Spinning e Hyrox.">Horários das aulas</button></li>
+          <li><button type="button" data-msg="queria agendar uma avaliação física.">Agendar avaliação física</button></li>
+          <li><button type="button" data-msg="queria saber sobre o Funcional Kids para o meu filho.">Funcional Kids</button></li>
+        </ul>
+      </div>
+      <div class="zap">
+        <div class="who">
+          <img src="assets/emblema.png" width="225" height="225" alt="">
+          <div><b>Fit One Manaus</b><span>WhatsApp da academia</span></div>
+        </div>
+        <div class="bubble"><span id="bubble"></span><small>agora</small></div>
+        <a class="btn wa-link" id="talk-btn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.4Z"/></svg>
+          Enviar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec light" id="duvidas" style="padding-top:clamp(40px,6vw,72px)">
+    <div class="wrap">
+      <div class="head"><h2>Antes de começar</h2></div>
+      <div class="faq">
+        <details><summary>Aceita Wellhub (Gympass)?</summary><p>Sim. A Fit One está no Wellhub a partir do plano Silver.</p></details>
+        <details><summary>Nunca treinei. Consigo acompanhar?</summary><p>Consegue. O treino é montado de acordo com o seu nível e o professor acompanha a execução dos exercícios.</p></details>
+        <details><summary>Quanto custa?</summary><p>Os valores dos planos são passados pelo WhatsApp. Chame a equipe e tire as dúvidas antes de começar.</p></details>
+        <details><summary>Como funciona a avaliação física?</summary><p>Antes de montar o seu treino, a equipe faz uma avaliação pra entender seu ponto de partida e seu objetivo. Pergunte no WhatsApp como agendar.</p></details>
+        <details><summary>Que idade a criança precisa ter pro Funcional Kids?</summary><p>Chame no WhatsApp que a equipe passa a idade, os dias e os horários das aulas.</p></details>
+        <details><summary>O que levar no primeiro dia?</summary><p>Roupa confortável, tênis, garrafinha de água e toalha. Se for usar o chuveiro, traga seus itens de banho.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec final dark">
+    <div class="wrap">
+      <img src="assets/logo-v.svg" width="230" height="329" alt="Fit One Manaus">
+      <div>
+        <h2>Seu treino começa com uma conversa.</h2>
+        <p>Conta o seu objetivo pra equipe. A partir daí eles montam o caminho com você.</p>
+        <a class="btn wa-link" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.4Z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Fit One Custom Training, Manaus</span>
+    <a href="https://www.instagram.com/fit1_manaus/" target="_blank" rel="noopener">@fit1_manaus no Instagram</a>
+  </div>
+</footer>
+
+<a class="float wa-link" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l.9 2.2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.4Z"/></svg>
+</a>
+
+<script>
+/* ====== CONFIGURAÇÃO DO CLIENTE (troque aqui) ====== */
+const CONFIG = {
+  whatsapp: "5592984163597",            // número com DDI+DDD, só dígitos
+  instagram: "https://www.instagram.com/fit1_manaus/",   // vazio = esconde o botão
+  fotos: [],                             // ex.: ["assets/fotos/salao.jpg","assets/fotos/cross.jpg", ...] até 5
+  horarios: {0:[7,11],1:[5,22],2:[5,22],3:[5,22],4:[5,22],5:[5,22],6:[6,14]}
+};
+/* =================================================== */
+
+(() => {
+  const waUrl = msg => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  const base = "Oi! Vim pelo site da Fit One e quero conhecer a academia.";
+  document.querySelectorAll('.wa-link').forEach(a => { if (a.id !== 'talk-btn') a.href = waUrl(base); });
+
+  // montador de mensagem
+  const bubble = document.getElementById('bubble'), talk = document.getElementById('talk-btn');
+  const opts = [...document.querySelectorAll('#opts button')];
+  function pick(btn){
+    opts.forEach(b => b.setAttribute('aria-pressed', b === btn));
+    const msg = `Oi! Vim pelo site da Fit One e ${btn.dataset.msg}`;
+    bubble.textContent = msg; talk.href = waUrl(msg);
+  }
+  opts.forEach(b => b.addEventListener('click', () => pick(b)));
+  pick(opts[0]);
+
+  // instagram
+  const ig = document.getElementById('ig-link');
+  if (CONFIG.instagram) ig.href = CONFIG.instagram; else ig.hidden = true;
+
+  // fotos reais
+  const slots = document.querySelectorAll('#gallery .ph');
+  if (!CONFIG.fotos.length) document.getElementById('fotos').hidden = true;
+  CONFIG.fotos.slice(0, slots.length).forEach((src, i) => {
+    const img = new Image(); img.src = src; img.alt = slots[i].textContent.trim(); img.loading = 'lazy';
+    slots[i].prepend(img); slots[i].querySelector('span').hidden = true;
+  });
+
+  // aberto agora (horário de Manaus, UTC-4)
+  const now = new Date(Date.now() - 4 * 3600e3);
+  const d = now.getUTCDay(), h = now.getUTCHours() + now.getUTCMinutes() / 60;
+  const [o, c] = CONFIG.horarios[d];
+  const st = document.getElementById('status'), txt = document.getElementById('status-text');
+  if (h >= o && h < c) { st.classList.add('open'); txt.textContent = `Aberto agora, fecha às ${c}h`; }
+  else {
+    const nd = h < o ? d : (d + 1) % 7;
+    txt.textContent = `Fechado agora. Abre ${nd === d ? 'hoje' : 'amanhã'} às ${CONFIG.horarios[nd][0]}h`;
+  }
+  const row = document.querySelector(`#hours tr[data-d="${d}"]`);
+  if (row) { row.classList.add('today'); const t = document.createElement('span'); t.className = 'tag'; t.textContent = 'hoje'; row.cells[0].append(t); }
+
+  // copiar telefone
+  document.getElementById('copy-phone').addEventListener('click', e => {
+    const t = document.getElementById('phone').textContent;
+    navigator.clipboard?.writeText(t).then(() => { e.target.textContent = 'Número copiado'; },
+      () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('phone')); getSelection().removeAllRanges(); getSelection().addRange(r); });
+  });
+})();
+</script>
+</body>
+</html>
