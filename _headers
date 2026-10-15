@@ -6,3 +6,11 @@
 
 /assets/*
   Cache-Control: public, max-age=86400
+
+# arquivos que mudam com frequência: sempre conferir se há versão nova
+/config.js
+  Cache-Control: no-cache
+/site.js
+  Cache-Control: no-cache
+/style.css
+  Cache-Control: no-cache
