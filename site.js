@@ -6,6 +6,17 @@
   const base = "Oi! Vim pelo site da Fit One e quero conhecer a academia.";
   document.querySelectorAll('.wa-link').forEach(a => { if (a.id !== 'talk-btn') a.href = waUrl(a.dataset.msg || base); });
 
+  // medição sem cookie (Umami). Os cliques saem dos atributos data-umami-event do HTML.
+  if (CONFIG.umamiId) {
+    const s = document.createElement('script');
+    s.defer = true;
+    s.src = CONFIG.umamiScript || 'https://cloud.umami.is/script.js';
+    s.dataset.websiteId = CONFIG.umamiId;
+    if (CONFIG.dominio) s.dataset.domains = CONFIG.dominio + ',www.' + CONFIG.dominio;
+    document.head.append(s);
+    const priv = $('priv'); if (priv) priv.hidden = false;
+  }
+
   // montador de mensagem
   const bubble = $('bubble'), talk = $('talk-btn'), opts = [...document.querySelectorAll('#opts button')];
   if (bubble && talk && opts.length) {
@@ -13,6 +24,7 @@
       opts.forEach(b => b.setAttribute('aria-pressed', b === btn));
       const msg = `Oi! Vim pelo site da Fit One e ${btn.dataset.msg}`;
       bubble.textContent = msg; talk.href = waUrl(msg);
+      talk.dataset.umamiEventAssunto = btn.textContent.trim();
     };
     opts.forEach(b => b.addEventListener('click', () => pick(b)));
     pick(opts[0]);
@@ -78,7 +90,8 @@
     $('avisos').hidden = false;
   }
 
-  // grade de aulas: tabela no computador, abas por dia no celular
+  // grade de aulas: tabela no computador, abas por dia no celular.
+  // A tabela já vem escrita no HTML (para o Google e as IAs); aqui ela é refeita a partir do config.js.
   const secAulas = $('aulas'), G = CONFIG.grade;
   if (secAulas) {
     if (!G || !Object.keys(G).length) { secAulas.hidden = true; document.querySelector('nav a[href="#aulas"]')?.remove(); }
@@ -89,6 +102,7 @@
       const quebra = t => t.replace(/\//g, '/​');
 
       const tabela = $('grade-table');
+      tabela.querySelectorAll('thead, tbody').forEach(x => x.remove());
       const horas = [...new Set(ORDEM.flatMap(k => (G[k] || []).map(x => x[0])))].sort();
       const thead = el('thead'), hr = el('tr');
       hr.append(el('th', '', 'Hora'));
