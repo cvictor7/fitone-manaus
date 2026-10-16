@@ -14,10 +14,11 @@ const CONFIG = {
 
   // Avisos: faixas no topo do site. Cada aviso some sozinho depois da data "ate" (formato AAAA-MM-DD, vale até o fim desse dia).
   // "de" é opcional (só aparece a partir dessa data). "cor" é opcional: "rosa" ou "amarelo" (sem cor = verde).
+  // "curto" (opcional) é a versão de uma linha que aparece no celular; o toque no "+" abre o texto inteiro.
   // Lista vazia = nada aparece. Para mais de um aviso, separe por vírgula.
   // Exemplo: {titulo:"Aulão Setembro Amarelo", texto:"Sábado, 20/09, às 7h15.", cor:"amarelo", de:"2026-09-15", ate:"2026-09-20"}
   avisos: [
-    {titulo: "Aulão Outubro Rosa", texto: "Sábado, 17/10, às 7h15, para os alunos da Fit One. Vá de rosa, com sorteios e brindes. Juntos por mais vida!", cor: "rosa", de: "2026-10-16", ate: "2026-10-17"}
+    {titulo: "Aulão Outubro Rosa", texto: "Sábado, 17/10, às 7h15, para os alunos da Fit One. Vá de rosa, com sorteios e brindes. Juntos por mais vida!", curto: "Sáb, 17/10, 7h15", cor: "rosa", de: "2026-10-16", ate: "2026-10-17"}
   ],
 
   // Feriados e dias com horário diferente. Preencha uma linha por dia; depois do dia, não faz mais nada.

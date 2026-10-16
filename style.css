@@ -92,7 +92,18 @@ header .btn{padding:11px 16px;font-size:.92rem}
 .pilares{background:var(--black);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
 .pilares ul{list-style:none;margin:0;padding:22px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 28px;font:900 clamp(1.5rem,3.6vw,2.6rem)/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--paper)}
 .pilares .g{color:var(--lime)}
-@media (max-width:760px){.pilares ul{justify-content:flex-start;padding:18px 0}}
+.pilares ul[aria-hidden]{display:none}
+@media (max-width:760px){
+  .pilares ul{justify-content:flex-start;padding:18px 0}
+  /* celular: faixa inteira que corre devagar, como o mural da parede (o JS liga a classe "run") */
+  .pilares.run{overflow:hidden}
+  .pilares.run .wrap{padding-inline:0;max-width:none}
+  .pilares.run .track{display:flex;width:max-content;animation:mural 28s linear infinite}
+  .pilares.run ul{flex:none;flex-wrap:nowrap;gap:0;padding:15px 0;font-size:2rem;white-space:nowrap}
+  .pilares.run ul[aria-hidden]{display:flex}
+  .pilares.run li{margin-right:36px}
+}
+@keyframes mural{to{transform:translateX(-50%)}}
 
 /* titulos de secao */
 .head{margin-bottom:44px;display:grid;gap:16px}
@@ -197,9 +208,24 @@ html{scroll-padding-top:72px}
 .av + .av{border-top:1px solid rgba(0,0,0,.18)}
 .av.rosa{background:#C2185B;color:#fff}
 .av.amarelo{background:#FFD400;color:#000}
+.av .c,.av .mais{display:none}
+@media (max-width:760px){
+  .av:not(.sem-curto) .wrap{display:flex;align-items:center;gap:10px;padding-block:9px}
+  .av:not(.sem-curto) p{flex:1;min-width:0;font-size:.86rem;white-space:nowrap}
+  .av:not(.sem-curto) .l{display:none}
+  .av:not(.sem-curto) .c{display:inline}
+  .av:not(.sem-curto) .mais{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;border:2px solid currentColor;background:transparent;color:inherit;font:800 1.1rem/1 var(--body);cursor:pointer;padding:0}
+  .av.aberto .wrap{align-items:flex-start}
+  .av.aberto p{white-space:normal;font-size:.95rem}
+  .av.aberto .l{display:inline}
+  .av.aberto .c{display:none}
+}
+@media (max-width:380px){
+  .av:not(.sem-curto) p{font-size:.78rem}
+  .av.aberto p{font-size:.9rem}
+}
 .avisos p{font-weight:600;line-height:1.35;text-wrap:balance}
 .avisos b{font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin-right:6px}
-
 /* planos */
 .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
 .plan{position:relative;border:1px solid var(--line-dark);padding:28px 24px 22px;display:flex;flex-direction:column}

@@ -30,6 +30,13 @@
     pick(opts[0]);
   }
 
+  // faixa das palavras do mural: no celular vira uma faixa que corre (copia escondida do texto para emendar)
+  const pil = document.querySelector('.pilares');
+  if (pil && matchMedia('(max-width:760px)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    const tr = pil.querySelector('.track'), ul = tr.querySelector('ul'), cp = ul.cloneNode(true);
+    cp.setAttribute('aria-hidden', 'true'); tr.append(cp); pil.classList.add('run');
+  }
+
   // instagram
   document.querySelectorAll('.ig-link').forEach(a => { if (CONFIG.instagram) a.href = CONFIG.instagram; else a.hidden = true; });
 
@@ -84,7 +91,8 @@
     return hojeStr >= de && hojeStr <= e.data;
   }).map(e => ({
     titulo: 'Horário especial', cor: e.cor,
-    texto: (e.nome ? e.nome + ', ' : '') + fmtDia(e.data) + ': ' + (e.abre == null ? 'a academia não abre.' : `funcionamos das ${e.abre}h às ${e.fecha}h.`)
+    texto: (e.nome ? e.nome + ', ' : '') + fmtDia(e.data) + ': ' + (e.abre == null ? 'a academia não abre.' : `funcionamos das ${e.abre}h às ${e.fecha}h.`),
+    curto: fmtDia(e.data) + ', ' + (e.abre == null ? 'fechado' : `${e.abre}h às ${e.fecha}h`)
   }));
   const ativos = [...doConfig, ...doDia];
   const caixa = $('avisos');
@@ -92,8 +100,17 @@
     ativos.forEach(a => {
       const av = el('div', 'av' + (a.cor ? ' ' + a.cor : '')), w = el('div', 'wrap'), p = el('p');
       if (a.titulo) p.append(el('b', '', a.titulo + '.'));
-      p.append(document.createTextNode(a.texto || ''));
-      w.append(p); av.append(w); caixa.append(av);
+      // no celular o aviso cabe numa linha só: mostra "curto" e abre o texto inteiro no toque
+      p.append(el('span', 'l', a.texto || ''));
+      w.append(p);
+      if (a.curto) {
+        p.append(el('span', 'c', a.curto));
+        const bt = el('button', 'mais', '+'); bt.type = 'button';
+        bt.setAttribute('aria-label', 'Ver o aviso completo'); bt.setAttribute('aria-expanded', 'false');
+        bt.addEventListener('click', () => { const on = av.classList.toggle('aberto'); bt.textContent = on ? '−' : '+'; bt.setAttribute('aria-expanded', on); });
+        w.append(bt);
+      } else av.classList.add('sem-curto');
+      av.append(w); caixa.append(av);
     });
     caixa.hidden = false;
   }
