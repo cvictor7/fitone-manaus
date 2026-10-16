@@ -52,6 +52,7 @@ nav{display:flex;gap:28px;font-weight:600;font-size:.95rem}
 nav a{text-decoration:none;color:#C4C8C4}
 nav a:hover{color:var(--paper)}
 header .btn{padding:11px 16px;font-size:.92rem}
+.hdr-btns{display:flex;gap:10px;align-items:center}
 @media (max-width:860px){nav{display:none}}
 
 /* hero */
@@ -71,7 +72,7 @@ header .btn{padding:11px 16px;font-size:.92rem}
 @keyframes rise{from{transform:translateY(8%);opacity:0}to{transform:none;opacity:1}}
 @media (max-width:760px){
   /* celular: sem botao fixo no topo; botoes + status + endereco ao lado do "1" */
-  .hdr-wa{display:none}
+  .hdr-btns{display:none}
   .hero{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) clamp(110px,32vw,160px);column-gap:18px;align-content:start;padding:44px 20px 52px;background:linear-gradient(180deg,rgba(0,0,0,.78),rgba(0,0,0,.4)),url(assets/marmore.webp) center/cover no-repeat #000}
   .hero-in,.hero-in>div{display:contents}
   .hero h1,.hero .lead{grid-column:1/-1}
@@ -83,6 +84,12 @@ header .btn{padding:11px 16px;font-size:.92rem}
 }
 @media (max-width:380px){.hero .btn{padding:14px 16px}}
 
+
+/* palavras do mural da academia */
+.pilares{background:var(--black);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.pilares ul{list-style:none;margin:0;padding:22px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 28px;font:900 clamp(1.5rem,3.6vw,2.6rem)/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--paper)}
+.pilares .g{color:var(--lime)}
+@media (max-width:760px){.pilares ul{justify-content:flex-start;padding:18px 0}}
 
 /* titulos de secao */
 .head{margin-bottom:44px;display:grid;gap:16px}

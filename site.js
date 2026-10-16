@@ -45,8 +45,7 @@
   }
 
   // instagram
-  const ig = $('ig-link');
-  if (ig) { if (CONFIG.instagram) ig.href = CONFIG.instagram; else ig.hidden = true; }
+  document.querySelectorAll('.ig-link').forEach(a => { if (CONFIG.instagram) a.href = CONFIG.instagram; else a.hidden = true; });
 
   // fotos reais
   const gal = $('fotos');
