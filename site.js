@@ -30,20 +30,6 @@
     pick(opts[0]);
   }
 
-  // botao flutuante: so aparece quando nenhum outro botao de WhatsApp esta na tela
-  const fl = document.querySelector('.float'), here = new Set();
-  if (fl) {
-    const setFl = on => { fl.classList.toggle('show', on); fl.inert = !on; };
-    if ('IntersectionObserver' in window) {
-      setFl(false);
-      const io = new IntersectionObserver(es => {
-        es.forEach(e => e.isIntersecting ? here.add(e.target) : here.delete(e.target));
-        setFl(here.size === 0);
-      }, {threshold: .6});
-      document.querySelectorAll('[data-wa-here]').forEach(x => io.observe(x));
-    } else setFl(true);
-  }
-
   // instagram
   document.querySelectorAll('.ig-link').forEach(a => { if (CONFIG.instagram) a.href = CONFIG.instagram; else a.hidden = true; });
 
