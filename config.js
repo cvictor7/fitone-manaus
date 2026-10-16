@@ -12,10 +12,19 @@ const CONFIG = {
   umamiScript: "https://cloud.umami.is/script.js",
   dominio: "fitonemanaus.com.br",        // só conta visitas vindas deste domínio (ignora prévias e testes)
 
-  // Avisos: faixa verde no topo. Some sozinha depois da data "ate" (formato AAAA-MM-DD, vale até o fim desse dia).
-  // "de" é opcional (só aparece a partir dessa data). Lista vazia = nada aparece.
-  // Exemplo: avisos: [{titulo:"Feriado", texto:"Dia 15/11 funcionamos das 7h às 11h.", de:"2026-11-10", ate:"2026-11-15"}],
-  avisos: [],
+  // Avisos: faixas no topo do site. Cada aviso some sozinho depois da data "ate" (formato AAAA-MM-DD, vale até o fim desse dia).
+  // "de" é opcional (só aparece a partir dessa data). "cor" é opcional: "rosa" ou "amarelo" (sem cor = verde).
+  // Lista vazia = nada aparece. Para mais de um aviso, separe por vírgula.
+  // Exemplo: {titulo:"Aulão Setembro Amarelo", texto:"Sábado, 20/09, às 7h15.", cor:"amarelo", de:"2026-09-15", ate:"2026-09-20"}
+  avisos: [
+    {titulo: "Aulão Outubro Rosa", texto: "Sábado, 17/10, às 7h15, para os alunos da Fit One. Vá de rosa, com sorteios e brindes. Juntos por mais vida!", cor: "rosa", de: "2026-10-16", ate: "2026-10-17"}
+  ],
+
+  // Feriados e dias com horário diferente. Preencha uma linha por dia; depois do dia, não faz mais nada.
+  // Nesse dia o "Aberto agora" e a tabela de horários usam o horário especial, e um aviso aparece sozinho
+  // nos 5 dias anteriores (mude com "avisoDe"). Para dia fechado, troque abre/fecha por null.
+  // Exemplo: {data:"2026-11-02", nome:"Finados", abre:6, fecha:12}
+  excecoes: [],
 
   // Grade de aulas: chave = dia da semana (0 domingo ... 6 sábado), valor = lista de [horário, aula]
   // ATENÇÃO: a tabela da grade também existe escrita direto no index.html (é o que o Google e as IAs leem).

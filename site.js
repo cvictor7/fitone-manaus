@@ -47,32 +47,55 @@
   // hora de Manaus (UTC-4)
   const now = new Date(Date.now() - 4 * 3600e3);
   const d = now.getUTCDay(), h = now.getUTCHours() + now.getUTCMinutes() / 60;
+  const hojeStr = now.toISOString().slice(0, 10);
+  const amanhaStr = new Date(now.getTime() + 864e5).toISOString().slice(0, 10);
+  const fmtDia = s => s.slice(8, 10) + '/' + s.slice(5, 7);
+
+  // feriados e dias com horário diferente (config.js > excecoes)
+  const EX = CONFIG.excecoes || [];
+  const exHoje = EX.find(x => x.data === hojeStr);
+  const horasDo = (dataStr, dow) => {
+    const e = EX.find(x => x.data === dataStr);
+    return e ? (e.abre == null ? [0, 0] : [e.abre, e.fecha]) : CONFIG.horarios[dow];
+  };
 
   // aberto agora
   const st = $('status'), txt = $('status-text');
   if (st && txt) {
-    const [o, c] = CONFIG.horarios[d];
+    const [o, c] = horasDo(hojeStr, d);
     if (h >= o && h < c) { st.classList.add('open'); txt.textContent = `Aberto agora, fecha às ${c}h`; }
     else {
-      const nd = h < o ? d : (d + 1) % 7;
-      txt.textContent = `Fechado agora. Abre ${nd === d ? 'hoje' : 'amanhã'} às ${CONFIG.horarios[nd][0]}h`;
+      const hoje = h < o;
+      const nd = hoje ? d : (d + 1) % 7;
+      const [no, nc] = hoje ? [o, c] : horasDo(amanhaStr, nd);
+      txt.textContent = no === nc ? 'Fechado agora' : `Fechado agora. Abre ${hoje ? 'hoje' : 'amanhã'} às ${no}h`;
     }
   }
   const row = document.querySelector(`#hours tr[data-d="${d}"]`);
-  if (row) { row.classList.add('today'); const t = el('span', 'tag', 'hoje'); row.cells[0].append(t); }
+  if (row) {
+    row.classList.add('today'); const t = el('span', 'tag', 'hoje'); row.cells[0].append(t);
+    if (exHoje) row.cells[1].textContent = (exHoje.nome ? exHoje.nome + ': ' : '') + (exHoje.abre == null ? 'fechado' : `${exHoje.abre}h às ${exHoje.fecha}h`);
+  }
 
-  // avisos com validade (data de Manaus)
-  const hojeStr = now.toISOString().slice(0, 10);
-  const ativos = (CONFIG.avisos || []).filter(a => (!a.de || hojeStr >= a.de) && (!a.ate || hojeStr <= a.ate));
-  if (ativos.length && $('avisos')) {
-    const box = $('avisos-list');
+  // avisos com validade (data de Manaus) + aviso automático dos dias especiais
+  const doConfig = (CONFIG.avisos || []).filter(a => (!a.de || hojeStr >= a.de) && (!a.ate || hojeStr <= a.ate));
+  const doDia = EX.filter(e => {
+    const de = e.avisoDe || new Date(Date.parse(e.data + 'T12:00:00Z') - 5 * 864e5).toISOString().slice(0, 10);
+    return hojeStr >= de && hojeStr <= e.data;
+  }).map(e => ({
+    titulo: 'Horário especial', cor: e.cor,
+    texto: (e.nome ? e.nome + ', ' : '') + fmtDia(e.data) + ': ' + (e.abre == null ? 'a academia não abre.' : `funcionamos das ${e.abre}h às ${e.fecha}h.`)
+  }));
+  const ativos = [...doConfig, ...doDia];
+  const caixa = $('avisos');
+  if (ativos.length && caixa) {
     ativos.forEach(a => {
-      const p = el('p');
+      const av = el('div', 'av' + (a.cor ? ' ' + a.cor : '')), w = el('div', 'wrap'), p = el('p');
       if (a.titulo) p.append(el('b', '', a.titulo + '.'));
       p.append(document.createTextNode(a.texto || ''));
-      box.append(p);
+      w.append(p); av.append(w); caixa.append(av);
     });
-    $('avisos').hidden = false;
+    caixa.hidden = false;
   }
 
   // grade de aulas: tabela no computador, abas por dia no celular.

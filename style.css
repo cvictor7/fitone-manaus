@@ -192,8 +192,11 @@ footer a:hover{color:var(--paper)}
 html{scroll-padding-top:72px}
 
 /* avisos (faixa no topo, some sozinha na data) */
-.avisos{background:var(--lime);color:var(--black)}
-.avisos .wrap{padding-block:12px;display:grid;gap:6px}
+.av{background:var(--lime);color:var(--black)}
+.av .wrap{padding-block:12px}
+.av + .av{border-top:1px solid rgba(0,0,0,.18)}
+.av.rosa{background:#C2185B;color:#fff}
+.av.amarelo{background:#FFD400;color:#000}
 .avisos p{font-weight:600;line-height:1.35;text-wrap:balance}
 .avisos b{font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin-right:6px}
 
