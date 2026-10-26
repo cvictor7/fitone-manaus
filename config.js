@@ -31,11 +31,11 @@ const CONFIG = {
   // ATENÇÃO: a tabela da grade também existe escrita direto no index.html (é o que o Google e as IAs leem).
   // Se mudar a grade aqui, peça pro Claude gerar a tabela do index.html de novo, senão ela fica desatualizada pros robôs.
   grade: {
-    1: [["05:30","Cross"],["06:30","Cross/Hyrox"],["07:00","Spinning"],["07:30","Cross"],["08:30","Cross"],["16:00","Cross"],["17:00","Cross"],["18:00","Cross"],["19:00","Cross"],["20:00","Cross"]],
+    1: [["05:30","Cross"],["06:30","Cross"],["07:00","Spinning"],["07:30","Cross"],["08:30","Cross"],["16:00","Cross"],["17:00","Cross"],["18:00","Cross"],["19:00","Cross"],["20:00","Cross"]],
     2: [["05:30","Cross"],["06:30","Funcional"],["07:30","Funcional"],["08:30","Cross"],["16:00","Cross"],["17:00","Kids/Func"],["18:00","Kids/Func"],["19:00","Spinning/Cross"]],
     3: [["05:30","Cross"],["06:30","Cross"],["07:00","Spinning"],["07:30","Cross"],["08:30","Cross"],["16:00","Cross"],["17:00","Cross"],["18:00","Cross"],["19:00","Cross"],["20:00","Cross"]],
     4: [["05:30","Hybrid"],["06:30","Hybrid"],["07:30","Hybrid"],["08:30","Hybrid"],["16:00","Hybrid"],["17:00","Kids/Hybrid"],["18:00","Kids/Hybrid"],["19:00","Spinning/Hybrid"]],
-    5: [["05:30","Cross"],["06:30","Hybrid"],["07:30","Cross"],["08:30","Cross"],["16:00","Cross"],["17:00","Cross"],["18:00","Cross"],["19:00","Cross"]],
+    5: [["05:30","Cross"],["06:30","Cross"],["07:30","Cross"],["08:30","Cross"],["16:00","Cross"],["17:00","Cross"],["18:00","Cross"],["19:00","Cross"]],
     6: [["07:15","Aulão"],["09:30","Matpilates"]],
     0: [["07:00","Hybrid"]]
   },
