@@ -305,3 +305,39 @@ html{scroll-padding-top:72px}
 .teaser .btn{white-space:nowrap}
 @media (max-width:760px){.teaser{grid-template-columns:1fr;gap:26px}.teaser .btn{justify-self:start}}
 .pagelinks{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* planos v16: 4 planos em 2 colunas, Black Friday */
+.plans4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.extras3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.plans4,.extras3{grid-template-columns:1fr}}
+.bf{position:relative;overflow:hidden;background:#000;border-block:2px solid var(--lime);padding:56px 0 52px;text-align:center}
+.bf[hidden]{display:none}
+.bf-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 55% at 50% 18%,rgba(112,224,0,.28),transparent 70%),repeating-linear-gradient(115deg,transparent 0 46px,rgba(112,224,0,.07) 46px 50px)}
+.bf .wrap{position:relative}
+.bf-logo{height:30px;width:auto;margin:0 auto 14px;display:block}
+.bf-title{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.82;font-style:italic;transform:skew(-6deg);margin:0}
+.bf-title span{display:block}
+.bf-title .b1{font-size:clamp(4.4rem,19vw,10rem);color:#fff;letter-spacing:-.01em}
+.bf-title .b2{font-size:clamp(4.6rem,20vw,10.6rem);color:var(--lime);text-shadow:0 0 38px rgba(112,224,0,.5);margin-top:-.04em}
+.bf-lema{margin-top:22px;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(1.9rem,6.4vw,3.6rem);line-height:1}
+.bf-lema b{color:var(--lime);font-weight:900}
+.bf-lema .n4{font-size:1.25em}
+.bf-sub{margin-top:10px;color:var(--gray);font-size:1.05rem}
+.bf-sub b{color:#fff}
+.bf-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:34px auto 0;max-width:980px;text-align:left}
+.bf-card{position:relative;border:1px solid var(--line-dark);padding:32px 22px 22px;background:rgba(10,10,10,.82)}
+.bf-card.main{border-color:var(--lime);box-shadow:inset 0 5px 0 var(--lime),0 0 34px rgba(112,224,0,.18)}
+.bf-card h3{font-size:clamp(2rem,3.4vw,2.6rem)}
+.bf-card .inc{margin-top:6px;color:var(--gray);font-size:.95rem}
+.bf-get{margin-top:16px;padding:10px 12px;background:var(--lime);color:var(--black);font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.03em}
+.bf-get small{display:block;font-weight:600;font-size:.78rem;text-transform:none;letter-spacing:0}
+.bf-pay{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.bf-pay>div{border:1px solid var(--line-dark);padding:14px 12px;display:grid;gap:2px;text-align:center}
+.bf-pay small{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray)}
+.bf-pay b{font-family:var(--display);font-weight:900;font-size:clamp(1.55rem,6.4vw,2.5rem);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bf-pay span{font-size:.85rem;color:var(--gray)}
+.bf-pay em{font-style:normal;font-weight:700;font-size:.86rem;color:var(--lime)}
+.bf-foot{margin-top:30px;display:grid;gap:12px;justify-items:center}
+.bf-foot p{font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;color:var(--gray)}
+@media (max-width:900px){.bf{padding:40px 0 38px}.bf-cards{grid-template-columns:1fr}.bf-card{padding:30px 16px 18px}.bf-pay{gap:8px}.bf-pay>div{padding:12px 6px}.bf-foot .btn{width:100%;justify-content:center;text-align:center}}
+@media (max-width:380px){.bf-pay{grid-template-columns:1fr}}

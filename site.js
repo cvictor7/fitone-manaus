@@ -85,14 +85,17 @@
   }
 
   // avisos com validade (data de Manaus) + aviso automático dos dias especiais
+  const BFc = CONFIG.blackFriday;
+  const bfOn = !!(BFc && (!BFc.de || hojeStr >= BFc.de) && (!BFc.ate || hojeStr <= BFc.ate));
+  document.querySelectorAll('.bf').forEach(x => x.hidden = !bfOn);
   const doConfig = (CONFIG.avisos || []).filter(a => (!a.de || hojeStr >= a.de) && (!a.ate || hojeStr <= a.ate));
   const doDia = EX.filter(e => {
     const de = e.avisoDe || new Date(Date.parse(e.data + 'T12:00:00Z') - 5 * 864e5).toISOString().slice(0, 10);
     return hojeStr >= de && hojeStr <= e.data;
   }).map(e => ({
-    titulo: 'Horário especial', cor: e.cor,
-    texto: (e.nome ? e.nome + ', ' : '') + fmtDia(e.data) + ': ' + (e.abre == null ? 'a academia não abre.' : `funcionamos das ${e.abre}h às ${e.fecha}h.`),
-    curto: fmtDia(e.data) + ', ' + (e.abre == null ? 'fechado' : `${e.abre}h às ${e.fecha}h`)
+    titulo: e.titulo || (e.abre == null ? 'Feriado' : 'Horário especial'), cor: e.cor,
+    texto: (e.abre == null ? 'Dia ' + fmtDia(e.data) + (e.motivo || e.nome ? ', ' + (e.motivo || e.nome) : '') + ': a academia estará fechada. Voltamos no dia seguinte.' : fmtDia(e.data) + (e.motivo || e.nome ? ', ' + (e.motivo || e.nome) : '') + ': funcionamos das ' + e.abre + 'h às ' + e.fecha + 'h.'),
+    curto: e.abre == null ? fmtDia(e.data) + (e.nome ? ', ' + e.nome : '') + ': academia fechada' : fmtDia(e.data) + ', ' + e.abre + 'h às ' + e.fecha + 'h'
   }));
   const ativos = [...doConfig, ...doDia];
   const caixa = $('avisos');
