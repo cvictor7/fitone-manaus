@@ -343,27 +343,31 @@ html{scroll-padding-top:72px}
 @media (max-width:380px){.bf-pay{grid-template-columns:1fr}}
 
 /* vídeo do treino Hybrid */
-.hy{position:relative;overflow:hidden;padding-block:clamp(40px,5vw,72px)}
-.hy::after{content:"";position:absolute;inset:-6%;z-index:0;pointer-events:none;background:url(assets/video/hybrid.webp) center/cover no-repeat;filter:blur(46px) saturate(1.2);opacity:.45}
-.hy::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.35) 55%,rgba(10,10,10,.6) 100%),linear-gradient(180deg,rgba(10,10,10,.9),transparent 22%,transparent 78%,rgba(10,10,10,.9))}
+.hy{position:relative;overflow:hidden;padding-block:clamp(36px,4.5vw,64px)}
+.hy::after{content:"";position:absolute;inset:-6%;z-index:0;pointer-events:none;background:url(assets/video/hybrid.webp) center/cover no-repeat;filter:blur(46px) saturate(1.25);opacity:.55}
+.hy::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,10,10,.85),rgba(10,10,10,.25) 20%,rgba(10,10,10,.25) 80%,rgba(10,10,10,.85))}
 .hy .wrap{position:relative;z-index:2}
-.hy-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(28px,6vw,88px);align-items:center}
-.hy h2{font-size:clamp(3.6rem,8vw,7rem);line-height:.92}
-.hy .head p{font-size:1.15rem;max-width:34rem;color:#DADDD9}
-.hy-chips{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
-.hy-chips li{padding:10px 16px;border:1px solid var(--lime);color:var(--lime);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
-.hy-quando{margin:26px 0 22px;color:#DADDD9;max-width:34rem}
-.hy-quando b{color:#fff}
-.hy-v{position:relative;aspect-ratio:9/16;width:100%;max-height:min(84vh,780px);justify-self:end;background:#0a0a0a;border:1px solid rgba(112,224,0,.55);overflow:hidden;box-shadow:0 0 0 1px rgba(112,224,0,.15),0 24px 80px rgba(0,0,0,.6),0 0 70px rgba(112,224,0,.18)}
+.hy-grid{display:grid;gap:28px clamp(24px,3.5vw,48px);grid-template-columns:minmax(0,1fr);align-items:center}
+.hy h2{font-size:clamp(3.2rem,6.4vw,6rem);line-height:.92}
+.hy .head p{margin-top:18px;font-size:1.1rem;max-width:34rem;color:#DADDD9}
+.hy-v{position:relative;aspect-ratio:9/16;width:min(100%,340px);margin-inline:auto;background:#0a0a0a;border:1px solid rgba(112,224,0,.55);overflow:hidden;box-shadow:0 0 0 1px rgba(112,224,0,.15),0 24px 80px rgba(0,0,0,.6),0 0 70px rgba(112,224,0,.18)}
 .hy-v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hy-side{padding:24px;border:1px solid var(--line-dark);background:rgba(10,10,10,.72)}
+.hy-side-t{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;color:var(--lime)}
+.hy-side ul{list-style:none;margin:14px 0 22px;padding:0}
+.hy-side li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line-dark)}
+.hy-side li b{text-transform:uppercase;letter-spacing:.04em}
+.hy-side li span{color:#DADDD9;text-align:right}
+.hy-side .btn{width:100%;justify-content:center}
 #fotos[hidden]{display:none}
-@media (max-width:760px){
-    .hy-grid{grid-template-columns:1fr}
-  .hy-v{order:2;width:min(100%,340px);max-height:none;margin-inline:auto;justify-self:center}
-  .hy-txt{display:contents}
-  .hy-txt .head{order:1}
-  .hy-chips{order:3;margin-top:22px}
-  .hy-quando{order:4;margin:20px 0 16px}
-  .hy-txt .btn{order:5;width:100%;justify-content:center}
-  .hy h2{font-size:clamp(3.2rem,15vw,4.4rem)}
+@media (min-width:761px){
+  .hy-grid{grid-template-columns:minmax(0,1fr) minmax(0,400px);grid-template-areas:"txt vid" "side vid"}
+  .hy-txt{grid-area:txt;align-self:end}
+  .hy-v{grid-area:vid;width:100%;max-height:min(80vh,740px);margin:0}
+  .hy-side{grid-area:side;align-self:start;max-width:460px}
+}
+@media (min-width:1100px){
+  .hy-grid{grid-template-columns:minmax(0,1fr) 400px minmax(0,.85fr);grid-template-areas:"txt vid side"}
+  .hy-txt{align-self:center}
+  .hy-side{align-self:center;max-width:none}
 }
