@@ -308,8 +308,8 @@ html{scroll-padding-top:72px}
 
 /* planos v16: 4 planos em 2 colunas, Black Friday */
 .plans4{grid-template-columns:repeat(2,minmax(0,1fr))}
-.extras3{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (max-width:900px){.plans4,.extras3{grid-template-columns:1fr}}
+.extras{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){.plans4,.extras{grid-template-columns:1fr}}
 .bf{position:relative;overflow:hidden;background:#000;border-block:2px solid var(--lime);padding:56px 0 52px;text-align:center}
 .bf[hidden]{display:none}
 .bf-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 55% at 50% 18%,rgba(112,224,0,.28),transparent 70%),repeating-linear-gradient(115deg,transparent 0 46px,rgba(112,224,0,.07) 46px 50px)}
