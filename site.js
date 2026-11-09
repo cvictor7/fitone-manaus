@@ -44,7 +44,7 @@
   const gal = $('fotos');
   if (gal) {
     const slots = document.querySelectorAll('#gallery .ph');
-    if (!CONFIG.fotos.length) gal.hidden = true;
+    gal.hidden = !CONFIG.fotos.length;
     CONFIG.fotos.slice(0, slots.length).forEach((src, i) => {
       const img = new Image(); img.src = src; img.alt = slots[i].textContent.trim(); img.loading = 'lazy';
       slots[i].prepend(img); slots[i].querySelector('span').hidden = true;
@@ -168,4 +168,21 @@
     navigator.clipboard?.writeText(t).then(() => { e.target.textContent = 'Número copiado'; },
       () => { const r = document.createRange(); r.selectNodeContents($('phone')); getSelection().removeAllRanges(); getSelection().addRange(r); });
   });
+})();
+
+
+// vídeos: só carregam e tocam quando aparecem na tela; sem movimento para quem pediu menos animação ou economia de dados
+(() => {
+  const vids = [...document.querySelectorAll('video[data-src]')];
+  if (!vids.length) return;
+  const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches || (navigator.connection && navigator.connection.saveData);
+  const carrega = v => { if (!v.src && v.dataset.src) { v.src = v.dataset.src; v.load(); } };
+  const toca = v => { carrega(v); const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  if (calmo || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (v.closest('[hidden]')) return;
+    if (e.isIntersecting) toca(v); else v.pause();
+  }), {threshold: 0.35});
+  vids.forEach(v => io.observe(v));
 })();

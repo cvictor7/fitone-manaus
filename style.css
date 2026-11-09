@@ -341,3 +341,19 @@ html{scroll-padding-top:72px}
 .bf-foot p{font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;color:var(--gray)}
 @media (max-width:900px){.bf{padding:40px 0 38px}.bf-cards{grid-template-columns:1fr}.bf-card{padding:30px 16px 18px}.bf-pay{gap:8px}.bf-pay>div{padding:12px 6px}.bf-foot .btn{width:100%;justify-content:center;text-align:center}}
 @media (max-width:380px){.bf-pay{grid-template-columns:1fr}}
+
+/* vídeo do treino Hybrid */
+.hy-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,380px);gap:clamp(28px,6vw,80px);align-items:center}
+.hy-quando{margin:28px 0 22px;color:var(--gray);max-width:34rem}
+.hy-quando b{color:#fff}
+.hy-v{position:relative;aspect-ratio:9/16;width:100%;max-height:680px;background:#0a0a0a;border:1px solid var(--line-dark);overflow:hidden;box-shadow:0 0 40px rgba(112,224,0,.12)}
+.hy-v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#fotos[hidden]{display:none}
+@media (max-width:760px){
+  .hy-grid{grid-template-columns:1fr}
+  .hy-v{order:2;width:min(100%,340px);margin-inline:auto}
+  .hy-txt{display:contents}
+  .hy-txt .head{order:1}
+  .hy-quando{order:3;margin:22px 0 16px}
+  .hy-txt .btn{order:4;width:100%;justify-content:center}
+}
