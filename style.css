@@ -343,17 +343,28 @@ html{scroll-padding-top:72px}
 @media (max-width:380px){.bf-pay{grid-template-columns:1fr}}
 
 /* vídeo do treino Hybrid */
-.hy-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,380px);gap:clamp(28px,6vw,80px);align-items:center}
-.hy-quando{margin:28px 0 22px;color:var(--gray);max-width:34rem}
+.hy{position:relative;overflow:hidden;padding-block:clamp(40px,5vw,72px)}
+.hy-bg{position:absolute;left:-8%;top:-8%;width:116%;height:116%;object-fit:cover;filter:blur(42px) saturate(1.25);opacity:.4;pointer-events:none}
+.hy::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.35) 55%,rgba(10,10,10,.6) 100%),linear-gradient(180deg,rgba(10,10,10,.9),transparent 22%,transparent 78%,rgba(10,10,10,.9))}
+.hy .wrap{position:relative;z-index:2}
+.hy-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(28px,6vw,88px);align-items:center}
+.hy h2{font-size:clamp(3.6rem,8vw,7rem);line-height:.92}
+.hy .head p{font-size:1.15rem;max-width:34rem;color:#DADDD9}
+.hy-chips{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.hy-chips li{padding:10px 16px;border:1px solid var(--lime);color:var(--lime);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}
+.hy-quando{margin:26px 0 22px;color:#DADDD9;max-width:34rem}
 .hy-quando b{color:#fff}
-.hy-v{position:relative;aspect-ratio:9/16;width:100%;max-height:680px;background:#0a0a0a;border:1px solid var(--line-dark);overflow:hidden;box-shadow:0 0 40px rgba(112,224,0,.12)}
+.hy-v{position:relative;aspect-ratio:9/16;width:100%;max-height:min(84vh,780px);justify-self:end;background:#0a0a0a;border:1px solid rgba(112,224,0,.55);overflow:hidden;box-shadow:0 0 0 1px rgba(112,224,0,.15),0 24px 80px rgba(0,0,0,.6),0 0 70px rgba(112,224,0,.18)}
 .hy-v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #fotos[hidden]{display:none}
 @media (max-width:760px){
+  .hy-bg{display:none}
   .hy-grid{grid-template-columns:1fr}
-  .hy-v{order:2;width:min(100%,340px);margin-inline:auto}
+  .hy-v{order:2;width:min(100%,340px);max-height:none;margin-inline:auto;justify-self:center}
   .hy-txt{display:contents}
   .hy-txt .head{order:1}
-  .hy-quando{order:3;margin:22px 0 16px}
-  .hy-txt .btn{order:4;width:100%;justify-content:center}
+  .hy-chips{order:3;margin-top:22px}
+  .hy-quando{order:4;margin:20px 0 16px}
+  .hy-txt .btn{order:5;width:100%;justify-content:center}
+  .hy h2{font-size:clamp(3.2rem,15vw,4.4rem)}
 }

@@ -181,7 +181,7 @@
   if (calmo || !('IntersectionObserver' in window)) return;
   const io = new IntersectionObserver(es => es.forEach(e => {
     const v = e.target;
-    if (v.closest('[hidden]')) return;
+    if (v.closest('[hidden]') || !v.offsetParent) return;
     if (e.isIntersecting) toca(v); else v.pause();
   }), {threshold: 0.35});
   vids.forEach(v => io.observe(v));
