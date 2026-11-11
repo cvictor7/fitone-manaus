@@ -21,7 +21,7 @@ const CONFIG = {
 
   // Black Friday: o anúncio com as ofertas (início e página Planos) aparece de "de" até "ate" (inclusive).
   // Para encerrar antes ou prorrogar, mude só a data "ate". Para apagar de vez, deixe blackFriday: null.
-  blackFriday: {de: "2026-10-29", ate: "2026-11-27"},
+  blackFriday: {de: "2026-10-29", ate: "2026-11-30"},
 
   // Feriados e dias com horário diferente. Preencha uma linha por dia; depois do dia, não faz mais nada.
   // Nesse dia o "Aberto agora" e a tabela de horários usam o horário especial, e um aviso aparece sozinho
@@ -46,3 +46,16 @@ const CONFIG = {
   horarios: {0:[7,11],1:[5,22],2:[5,22],3:[5,22],4:[5,22],5:[5,22],6:[6,14]}
 };
 /* =================================================== */
+
+
+// Plano sugerido no "Qual plano combina com você?" (planos.html). Se mudar preço no planos.html, mude aqui também.
+CONFIG.quiz = {
+  musc: { nome: "Musculação", inclui: "Musculação até 7x por semana, com ficha individual e acompanhamento do professor.",
+    per: { mensal: ["R$ 170 por mês", ""], trimestral: ["3x R$ 145", "total R$ 435"], semestral: ["6x R$ 135", "total R$ 810"] } },
+  mh: { nome: "Musculação + Híbrido", inclui: "Musculação até 7x por semana e treino Híbrido até 3x por semana.",
+    per: { mensal: ["R$ 240 por mês", ""], trimestral: ["3x R$ 220", "total R$ 660"], semestral: ["6x R$ 200", "total R$ 1.200"] } },
+  hc: { nome: "Híbrido + Cross", inclui: "Treino Híbrido até 3x por semana e Cross até 5x por semana.",
+    per: { mensal: ["R$ 270 por mês", ""], trimestral: ["3x R$ 250", "total R$ 750"], semestral: ["6x R$ 230", "total R$ 1.380"] } },
+  gold: { nome: "Gold", inclui: "Todas as modalidades: Musculação, Híbrido e Cross. Inclui 5 convites por mês.",
+    per: { mensal: ["R$ 320 por mês", ""], trimestral: ["3x R$ 290", "total R$ 870"], semestral: ["6x R$ 250", "total R$ 1.500"], anual: ["12x R$ 220", "total R$ 2.640"] } }
+};

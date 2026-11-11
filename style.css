@@ -371,3 +371,35 @@ html{scroll-padding-top:72px}
   .hy-txt{align-self:center}
   .hy-side{align-self:center;max-width:none}
 }
+
+
+/* quiz de plano (planos.html) */
+.quiz-jump{margin-top:14px}
+.quiz-jump a{color:var(--lime);font-weight:700;text-underline-offset:4px}
+.plan:target,.extra:target{outline:3px solid var(--lime);outline-offset:6px;scroll-margin-top:90px}
+.quiz{max-width:760px;margin-top:32px}
+.q-prog{display:flex;gap:6px}
+.q-prog i{flex:1;height:4px;background:var(--line-light)}
+.q-prog i.on{background:var(--black)}
+.q-n{margin-top:14px;font-size:.88rem;color:var(--gray-ink)}
+.q-t{margin-top:6px;font-size:clamp(2rem,5.4vw,3rem)}
+.q-opts{display:grid;gap:10px;margin-top:20px}
+.q-opt{display:block;width:100%;text-align:left;min-height:58px;padding:14px 18px;font:inherit;font-weight:700;color:var(--black);background:var(--paper);border:2px solid var(--black);border-radius:4px;cursor:pointer;transition:background .15s,color .15s}
+.q-opt small{display:block;margin-top:2px;font-weight:400;font-size:.9rem;color:var(--gray-ink)}
+.q-opt:hover,.q-opt:focus-visible{background:var(--black);color:var(--paper)}
+.q-opt:hover small,.q-opt:focus-visible small{color:#CFD3CE}
+.q-back{margin-top:16px;padding:8px 0;background:none;border:0;font:inherit;font-weight:600;color:var(--gray-ink);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.q-res{margin-top:22px;padding:clamp(22px,4vw,38px);background:var(--black);color:var(--paper);border-radius:4px}
+.q-k{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray)}
+.q-rt{margin-top:8px;font-size:clamp(2.4rem,7vw,3.8rem)}
+.q-price{margin-top:12px;font-family:var(--display);font-weight:900;font-size:clamp(2rem,6vw,2.8rem);line-height:1;color:var(--lime)}
+.q-d{margin-top:10px;max-width:34rem;color:#DADDD9}
+.q-note{margin-top:10px;font-size:.92rem;color:var(--gray)}
+.q-act{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.q-res .q-back{color:var(--gray);margin-top:18px}
+.pagelinks{margin-top:36px}
+@media (max-width:560px){.q-act .btn{width:100%;justify-content:center}}
+@media (prefers-reduced-motion:reduce){.q-opt{transition:none}}
+
+.extras3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.extras3{grid-template-columns:1fr}}
