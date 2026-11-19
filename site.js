@@ -100,8 +100,8 @@
     return hojeStr >= de && hojeStr <= e.data;
   }).map(e => ({
     titulo: e.titulo || (e.abre == null ? 'Feriado' : 'Horário especial'), cor: e.cor,
-    texto: (e.abre == null ? 'Dia ' + fmtDia(e.data) + (e.motivo || e.nome ? ', ' + (e.motivo || e.nome) : '') + ': a academia estará fechada. Voltamos no dia seguinte.' : fmtDia(e.data) + (e.motivo || e.nome ? ', ' + (e.motivo || e.nome) : '') + ': funcionamos das ' + e.abre + 'h às ' + e.fecha + 'h.'),
-    curto: e.abre == null ? fmtDia(e.data) + (e.nome ? ', ' + e.nome : '') + ': academia fechada' : fmtDia(e.data) + ', ' + e.abre + 'h às ' + e.fecha + 'h'
+    texto: (e.abre == null ? 'Dia ' + fmtDia(e.data) + (e.motivo || e.nome ? ', ' + (e.motivo || e.nome) : '') + ': a academia estará fechada. Voltamos no dia seguinte.' : fmtDia(e.data) + (e.motivo || e.nome ? ', ' + (e.motivo || e.nome) : '') + ': funcionamos das ' + e.abre + 'h às ' + e.fecha + 'h.' + (e.aulas ? ' ' + e.aulas : '')),
+    curto: e.abre == null ? fmtDia(e.data) + (e.nome ? ', ' + e.nome : '') + ': academia fechada' : fmtDia(e.data) + (e.nome ? ', ' + e.nome : '') + ': ' + e.abre + 'h às ' + e.fecha + 'h'
   }));
   const ativos = [...doConfig, ...doDia];
   const caixa = $('avisos');

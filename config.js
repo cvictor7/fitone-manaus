@@ -28,7 +28,8 @@ const CONFIG = {
   // nos 5 dias anteriores (mude com "avisoDe"). Para dia fechado, troque abre/fecha por null.
   // "motivo" é o porquê, em poucas palavras, que aparece no aviso. Exemplo: {data:"2026-11-02", nome:"Finados", motivo:"feriado de Finados", abre:6, fecha:12}
   excecoes: [
-    {data: "2026-11-02", nome: "Finados", motivo: "feriado de Finados", abre: null, fecha: null}
+    {data: "2026-11-02", nome: "Finados", motivo: "feriado de Finados", abre: null, fecha: null},
+    {data: "2026-11-20", titulo: "Feriado", nome: "Consciência Negra", motivo: "feriado de Consciência Negra", abre: 6, fecha: 18, aulas: "Aulas de Cross às 6h30, 7h30, 16h e 17h."}
   ],
 
   // Grade de aulas: chave = dia da semana (0 domingo ... 6 sábado), valor = lista de [horário, aula]
